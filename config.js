@@ -29,10 +29,10 @@ window.CONFIG = {
   23: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgA7pJ3JMEX4SYCyy6uP8C5UAWwz8CXFgrJYjMtyMvTLsZA?e=uFRxUg',
   24: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCM4_NByvsnRq9BXiTnT8oQAfsnDfYPygH-16945F_Z7ck?e=0mbZcx',
  },
-assignments: {
+ assignments: {
   seminar: [1,24],
   tn1: [2,13], tn2: [3,12], tn3: [4,16],
-  tn4: [5,17], tn5: [6,18], tn6: [7,19],
-  tn7: [8,14], tn8: [9,23], tn9: [10,22],
-  tn10: [15,21], tn11: [11,20]
-}
+  tn4: [5,17], tn5: [6,18], tn6: [7,19], tn7: [8,14],
+  tn8: [9,23], tn9: [10,22], tn10: [15,21], tn11: [11,20]
+ }
+};
