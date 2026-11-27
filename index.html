@@ -1,6 +1,46 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>24 kleine Auszeiten</title><style>
 *{box-sizing:border-box}body{margin:0;background:#f5f2e9;color:#294b40;font:17px/1.55 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:24px}header{text-align:center;padding:22px 0}h1{font:clamp(2rem,6vw,3.5rem) Georgia,serif;margin:10px 0}h2{font-size:1.25rem} .ornament{font-size:2rem;letter-spacing:.5em} .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.door{aspect-ratio:1;border:1px solid #9aa99b;border-radius:12px;background:#dce7db;color:#294b40;display:flex;flex-direction:column;align-items:center;justify-content:center;font:inherit;cursor:pointer;transition:transform .2s}.door:nth-child(3n){background:#ead9cd}.door:nth-child(3n+1){background:#e9e1cc}.door strong{font:2rem Georgia,serif}.door small{font-size:.75rem}.door.open{border:2px solid #456e54}.door:hover{transform:translateY(-3px)}button:focus-visible,a:focus-visible{outline:3px solid #254f92;outline-offset:4px}a.action,button.action{display:inline-block;background:#345e49;color:white;padding:12px 18px;border-radius:8px;border:0;font:inherit;text-decoration:none;cursor:pointer}.panel{background:#fffdf8;border:1px solid #b8c4b7;border-radius:12px;padding:20px;margin:16px 0}dialog{max-width:460px;width:90%;border:1px solid #879d8c;border-radius:16px;padding:24px;color:#294b40;background:#fffdf8}dialog::backdrop{background:#172d27aa}footer{text-align:center;margin:24px 0;font-size:.85rem} .muted{font-size:.9rem} @media(max-width:600px){.grid{grid-template-columns:repeat(4,1fr);gap:8px}main{padding:16px}.door strong{font-size:1.6rem}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body><main><header><div class="ornament" aria-hidden="true">✧ ❄ ✧</div><h1 id="title"></h1><p id="subtitle"></p></header><section id="content"></section><footer>Eine kleine Auszeit im Advent.</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="message"></div><form method="dialog"><button class="action" style="margin-top:16px">Schließen</button></form></dialog><script src="config.js"></script><script>
+</style></head><body><main><header><div class="ornament" aria-hidden="true">✧ ❄ ✧</div><h1 id="title"></h1><p id="subtitle"></p></header><section id="content"></section><footer>Eine kleine Auszeit im Advent.</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="message"></div><form method="dialog"><button class="action" style="margin-top:16px">Schließen</button></form></dialog><script>
+window.CONFIG = {
+ year: 2026,
+ title: '24 kleine Auszeiten',
+ subtitle: 'Advent im Kernseminar – von uns für uns',
+ // Jeweils den Teams-Link zwischen die Anführungszeichen einfügen.
+ links: {
+  1: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgC7HtbPiFraTLWn404m9DVnAZiNg3JCgHtoHdpOWk4CC_A?e=SfiNIi',
+  2: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgA97cdfRs59SbTnJJlvIIfXAR9ygi6QshW550Na-4hfOXo?e=iTBw0O',
+  3: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgAVy8k0udZLRLmsFGYAbmbAAXjtH9-CX4ASVq2u6WjSnz8?e=UoWGxx',
+  4: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCYreUdH6H5TaX_4GQU7_72AcXdQGZStqOHmHsqODxJYuU?e=6bJNvF',
+  5: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgBPGJ8rerCKRYCR2pxSEfTZAagSdzYt35ZgT68UQmS4gtQ?e=JfhSr1',
+  6: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCpVDxcTKLdQ66Icz4wOdpeAYxI6jduc3tRo6y9eJbZG74?e=haLefB',
+  7: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCDzxgqkmdqRKWrys6JmzsEAbL8WoOfq7dkQylcMhIAz0o?e=PYAaKK',
+  8: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgDz_b_LjJnETLdopoZo_rF8ATB9YXXF8U0wf-vBHVbnFhU?e=lVUxrg',
+  9: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgD3CpiIhqJJQYvKDcjatkHXAdQZ434UIUqML4FzwkiDv3c?e=SX0hG3',
+  10: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgDZpeMoiEEHSbPm-V2lj2KaASh2XlC0WGe6UPM-tQN3K_k?e=kPg8eM',
+  11: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCJVCxHOtuxQppuivLbfWuBAZvORo0YgF5t7XPRRX6Qnuc?e=yQnNA8',
+  12: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgD_vGuIDsVeSovmm3yaikcQAUnVJB7u1lN0lA2c7ZSJvy8?e=s1XeeT',
+  13: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgBXlbh5vs2yRJAWbLjnXpm_AUKGT2OwBDy2GG7edgAB9rc?e=GvYdXD',
+  14: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgDO5s9FqkvVRLnPkZnlMiq-AY3nzdA4IOmRp-kFWQkhXco?e=FEsGZq',
+  15: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCGWuJardZ0SrYTniM_yGCNAVFRtIix3hOPGGZ3Pmyka7g?e=irYpgN',
+  16: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgAkkKimMYmCQJWrnXVxOmpgAd-6-ad4IAq_UX_WZ4H7bKE?e=XlWW2H',
+  17: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgBBZXqfrbBaSqLAmUb3sO7JAQaFteH2BA9vuYnq_2ik-Gk?e=MewdMt',
+  18: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgA87ZlSDsbCSZCr5stIamNkAZUWBkM7f7qznVsrSv8_uxc?e=KYbTeC',
+  19: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgB-wk5nvSs-Qqh2GCSQR6U0ASk-_acoelbaw9g2WuS98bo?e=46Uw6d',
+  20: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgDf8r9FrDG-SZ7Ah9176J-GAZIzuB-UqOauZ6Kzs9zG5Pc?e=fSGJe9',
+  21: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgB4DMzADm3sQ6qNlBQb-WZzAY0-N7ieLkBwDNtRXwVghQs?e=szvlfH',
+  22: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCgt7k7f7cDTrVWuPuW5uXOAbDoSK0JNnnJesgf6TNjtw0?e=A0GwKn',
+  23: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgA7pJ3JMEX4SYCyy6uP8C5UAWwz8CXFgrJYjMtyMvTLsZA?e=uFRxUg',
+  24: 'https://zfslkoeln.sharepoint.com/:f:/s/SFKSvanHalteren/IgCM4_NByvsnRq9BXiTnT8oQAfsnDfYPygH-16945F_Z7ck?e=0mbZcx',
+ },
+assignments: {
+  seminar: [1,24],
+  tn1: [2,13], tn2: [3,12], tn3: [4,16],
+  tn4: [5,17], tn5: [6,18], tn6: [7,19],
+  tn7: [8,14], tn8: [9,23], tn9: [10,22],
+  tn10: [15,21], tn11: [11,20]
+}
+};
+</script><script>
 const c=window.CONFIG, content=document.getElementById('content'), modal=document.getElementById('modal');
 document.getElementById('title').textContent=c.title;document.getElementById('subtitle').textContent=c.subtitle;
 const params=new URLSearchParams(location.search), edit=params.get('gestalten'), preview=params.get('vorschau')==='1';
